@@ -34,3 +34,17 @@ Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
 voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
 repellat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+How to run test script:
+
+git bisect start
+git bisect good 1d7ca45
+git bisect bad 9eb4427
+git bisect run env/bin/pytest test_readme.py
+git bisect log
+git bisect reset
+
+
+can use tmux with the following to demonstrate:
+watch -n0.1 --color "git log --oneline --graph --decorate --all --color"
+watch -n0.1 cat README.md
